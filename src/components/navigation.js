@@ -11,6 +11,6 @@ const Navigation = ({themeHandler, languageHandler, classNameHandler, theme, lan
   );
 };
 
-// [lang][str]
+// flag and lang should change on hover to preview what would change
 
 export default Navigation;
