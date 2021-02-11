@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import "./index.css";
+import Navigation from "./components/navigation";
+const strings = require('./strings.json');
+
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+  const [language, setLanguage] = useState("en");
+
+  const themeHandler = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  const languageHandler = () => {
+    if (language === "en") {
+      setLanguage("es");
+    } else {
+      setLanguage("en");
+    }
+  };
+
+  const classNameHandler = (theme, prefix)=> {
+    return theme === 'dark' ? `${prefix}-dark` : `${prefix}-light`;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation
+        themeHandler={themeHandler}
+        languageHandler={languageHandler}
+        classNameHandler={classNameHandler}
+        theme={theme}
+        language={language}
+      />
+      <h1>{strings[language].greeting}</h1>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+{
+    "en": {
+        "flag": "🇺🇸",
+        "greeting": "Hello, World",
+        "light": {
+            "themeName": "Light"
+        },
+        "dark": {
+            "themeName": "Dark"
+        }
+    },
+    "es": {
+        "flag": "🇪🇸",
+        "greeting": "Hola, Mundo",
+        "light": {
+            "themeName": "Luz"
+        },
+        "dark": {
+            "themeName": "Oscuro"
+        }
+    }
+}
