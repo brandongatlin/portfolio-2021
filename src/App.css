@@ -3,9 +3,37 @@
 }
 
 .nav-dark {
-  background-color: darkcyan;
+  background-color: black;
 }
 
-.button-light {
-  background-color: white;
+button {
+  width: 5rem;
 }
+
+.bio-light {
+  background-color: white;
+  color: black;
+}
+
+.bio-dark {
+  background-color: black;
+  color: white;
+}
+
+/* div[class^='skills-']{
+  width: 100%;
+} */
+
+.skills-light {
+  background-color: grey;
+  color: black;
+}
+
+.skills-dark
+{
+  background-color: gray;
+  color: white;
+}
+/* .button-light {
+  background-color: white;
+} */

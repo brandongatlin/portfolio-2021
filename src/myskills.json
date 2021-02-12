@@ -1,0 +1,4 @@
+{
+    "frontEnd": ["React", "JQuery"],
+    "serverSide": ["Node JS", "ASP.NET", "Python", "Django"]
+}

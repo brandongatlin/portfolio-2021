@@ -2,8 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import "./index.css";
 import Navigation from "./components/navigation";
-const strings = require('./strings.json');
+import Bio from "./components/bio";
+import Skills from "./components/skills";
+import { Container } from "react-bootstrap";
 
+const strings = require("./strings.json");
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -25,12 +28,12 @@ function App() {
     }
   };
 
-  const classNameHandler = (theme, prefix)=> {
-    return theme === 'dark' ? `${prefix}-dark` : `${prefix}-light`;
-  }
+  const classNameHandler = (theme, prefix) => {
+    return theme === "dark" ? `${prefix}-dark` : `${prefix}-light`;
+  };
 
   return (
-    <div>
+    <>
       <Navigation
         themeHandler={themeHandler}
         languageHandler={languageHandler}
@@ -38,8 +41,12 @@ function App() {
         theme={theme}
         language={language}
       />
-      <h1>{strings[language].greeting}</h1>
-    </div>
+      <Container fluid>
+        <h1>{strings[language].greeting}</h1>
+        <Bio language={language} theme={theme} classNameHandler={classNameHandler} />
+        <Skills theme={theme} classNameHandler={classNameHandler}/>
+      </Container>
+    </>
   );
 }
 
