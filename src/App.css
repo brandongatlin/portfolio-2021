@@ -1,3 +1,7 @@
+* {
+  font-family: 'Brygada 1918', serif;
+}
+
 .nav-light {
   background-color: white;
 }
@@ -8,6 +12,7 @@
 
 button {
   width: 5rem;
+  height: 3rem;
 }
 
 .bio-light {
@@ -37,3 +42,22 @@ button {
 /* .button-light {
   background-color: white;
 } */
+
+#flag-btn {
+  font-size: 1.5rem;
+}
+
+h1::before, p::before {
+  color: gray;
+  font-size: xx-small;
+  font-family: 'Dancing Script', cursive;
+}
+
+p::before {
+  content: "<p>";
+  
+}
+
+h1:before {
+  content: "<h1>";
+}

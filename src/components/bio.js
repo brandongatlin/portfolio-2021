@@ -1,9 +1,9 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-const Biography = ({ theme }) => {
+const Biography = () => {
   return (
-    <>
+    <div>
       <p>
         My name is Brandon Gatlin and I am a software engineer for WEX, inc. My
         coding journey started when I decided to change careers and, on a
@@ -25,13 +25,13 @@ const Biography = ({ theme }) => {
         here. I've also needed to pick up Python and C# to accomplish the things
         I've been tasked with.
       </p>
-    </>
+    </div>
   );
 };
 
-const Biografia = ({ theme }) => {
+const Biografia = () => {
   return (
-    <>
+    <div>
       <p>
         Me llamo Brandon Gatlin y soy ingeniero de software por WEX, S.A.
         Empiecé a programar en septiembre 2017. Después haber decidir cambiarme
@@ -54,7 +54,7 @@ const Biografia = ({ theme }) => {
         cosas (y cosas aún por aprender) que había aprendido antes. El Python y
         C# son dos ejemplos de lo que necesitaba hacer mi trabajo.
       </p>
-    </>
+    </div>
   );
 };
 
@@ -63,9 +63,9 @@ const Bio = ({ language, theme, classNameHandler }) => {
     <Row className={classNameHandler(theme, "bio")}>
       <Col>
         {language === "en" ? (
-          <Biography theme={theme} />
+          <Biography />
         ) : (
-          <Biografia theme={theme} />
+          <Biografia />
         )}
       </Col>
     </Row>

@@ -32,6 +32,12 @@ function App() {
     return theme === "dark" ? `${prefix}-dark` : `${prefix}-light`;
   };
 
+  // router?
+  // / => home
+  // /portfolio => portfolio
+  // /hobbies => pix of hobbies
+  // /contact => contact info
+
   return (
     <>
       <Navigation

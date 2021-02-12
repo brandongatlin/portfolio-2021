@@ -1,4 +1,26 @@
 {
-    "frontEnd": ["React", "JQuery"],
-    "serverSide": ["Node JS", "ASP.NET", "Python", "Django"]
+    "frontEnd": [
+        "React",
+        "JQuery"
+    ],
+    "serverSide": [
+        "Node JS",
+        "ASP.NET",
+        "Python",
+        "Django"
+    ],
+    "data": [
+        "mySql",
+        "Postgres"
+    ],
+    "APIs": [
+        "RESTful",
+        "GraphQL"
+    ],
+    "versionControl": [
+        "github",
+        "Azure DevOps",
+        "Perforce"
+    ],
+    "hobbies": ["stained glass", "mountain biking 🚵🏻‍♂️"]
 }
