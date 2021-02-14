@@ -1,3 +1,11 @@
+:root {
+  --princetonOrange: #FA8334;
+  --laserLemon: #FFFD77;
+  --yellowCrayola: #FFE882;
+  --metallicSeaweed: #388697;
+  --darkPurple: #271033;
+}
+
 * {
   font-family: "Brygada 1918", serif;
 }
@@ -9,20 +17,20 @@
 }
 
 .nav-light {
-  background-color: #FA8334;
+  background-color: var(--princetonOrange);
 }
 
 .nav-light a {
-  background-color: #FA8334;
-  color: #271033;
+  background-color: var(--princetonOrange);
+  color: var(--darkPurple);
 }
 
 .nav-dark {
-  background-color:#271033;
+  background-color:var(--darkPurple);
 }
 
 .nav-dark a {
-  color: #FA8334;
+  color: var(--princetonOrange);
 
 }
 
@@ -37,12 +45,12 @@ div[class^='bio-'], div[class^='skills-'] {
 }
 
 .bio-light {
-  background-color: #FFE882;
+  background-color: var(--yellowCrayola);;
   color: black;
 }
 
 .bio-dark {
-  background-color: #388697;
+  background-color: var(--metallicSeaweed);;
   color: white;
 }
 
@@ -62,7 +70,7 @@ div[class^='bio-'], div[class^='skills-'] {
 
 h1::before,
 p::before {
-  color: #FA8334;
+  color: var(--princetonOrange);;
   font-size: x-small;
   font-family: "Dancing Script", cursive;
 }
