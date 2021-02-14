@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+const strings = require("../strings.json");
 
 const Biography = () => {
   return (
@@ -62,11 +63,8 @@ const Bio = ({ language, theme, classNameHandler }) => {
   return (
     <Row className={classNameHandler(theme, "bio")}>
       <Col>
-        {language === "en" ? (
-          <Biography />
-        ) : (
-          <Biografia />
-        )}
+        <h1>{strings[language].greeting}</h1>
+        {language === "en" ? <Biography /> : <Biografia />}
       </Col>
     </Row>
   );

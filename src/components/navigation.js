@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Nav, Button } from "react-bootstrap";
+import logo from '../images/logo.jpg';
 const strings = require("../strings.json");
 
 const Navigation = ({
@@ -29,6 +30,7 @@ const Navigation = ({
       setCurrentFlag(strings["en"].flag);
     }
   };
+
   const hoverOutHandler = (e) => {
     setCurrentFlag(strings[language].flag);
     setDisplayedTheme(strings[language][theme].themeName);
@@ -36,23 +38,39 @@ const Navigation = ({
 
   return (
     <Nav className={classNameHandler(theme, "nav")} variant="pills">
-      <Button
-        onClick={(e) => themeHandler()}
-        variant={theme === "dark" ? "outline-light" : "outline-dark"}
-        onMouseEnter={(e) => hoverInThemeHandler(e)}
-        onMouseLeave={(e) => hoverOutHandler(e)}
-      >
-        {displayedTheme}
-      </Button>
-      <Button
-        id="flag-btn"
-        onClick={(e) => languageHandler()}
-        variant={theme === "dark" ? "outline-light" : "outline-dark"}
-        onMouseEnter={(e) => hoverInFlagHandler(e)}
-        onMouseLeave={(e) => hoverOutHandler(e)}
-      >
-        {currentFlag}
-      </Button>
+      <Nav.Item>
+        <Nav.Link href="/" eventKey="/">
+          <img id='logo' src={logo} />
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/portfolio" eventKey="/portfolio">
+          /portfolio
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/contact" eventKey="/contact">
+          /contact
+        </Nav.Link>
+      </Nav.Item>
+        <Button
+        id='theme-btn'
+          onClick={(e) => themeHandler()}
+          variant={theme === "dark" ? "outline-light" : "outline-dark"}
+          onMouseEnter={(e) => hoverInThemeHandler(e)}
+          onMouseLeave={(e) => hoverOutHandler(e)}
+        >
+          {displayedTheme}
+        </Button>
+        <Button
+          id="flag-btn"
+          onClick={(e) => languageHandler()}
+          variant={theme === "dark" ? "outline-light" : "outline-dark"}
+          onMouseEnter={(e) => hoverInFlagHandler(e)}
+          onMouseLeave={(e) => hoverOutHandler(e)}
+        >
+          {currentFlag}
+        </Button>
     </Nav>
   );
 };

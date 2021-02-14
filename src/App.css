@@ -1,63 +1,101 @@
 * {
-  font-family: 'Brygada 1918', serif;
+  font-family: "Brygada 1918", serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  height: 90vh;
 }
 
 .nav-light {
-  background-color: white;
+  background-color: #FA8334;
+}
+
+.nav-light a {
+  background-color: #FA8334;
+  color: #271033;
 }
 
 .nav-dark {
-  background-color: black;
+  background-color:#271033;
+}
+
+.nav-dark a {
+  color: #FA8334;
+
 }
 
 button {
   width: 5rem;
   height: 3rem;
+  margin-top: 2vh;
+}
+
+div[class^='bio-'], div[class^='skills-'] {
+  padding: 25px;
 }
 
 .bio-light {
-  background-color: white;
+  background-color: #FFE882;
   color: black;
 }
 
 .bio-dark {
-  background-color: black;
+  background-color: #388697;
   color: white;
 }
 
-/* div[class^='skills-']{
-  width: 100%;
-} */
-
 .skills-light {
-  background-color: grey;
+  background-color: lightgray;
   color: black;
 }
 
-.skills-dark
-{
+.skills-dark {
   background-color: gray;
   color: white;
 }
-/* .button-light {
-  background-color: white;
-} */
 
 #flag-btn {
   font-size: 1.5rem;
 }
 
-h1::before, p::before {
-  color: gray;
-  font-size: xx-small;
-  font-family: 'Dancing Script', cursive;
+h1::before,
+p::before {
+  color: #FA8334;
+  font-size: x-small;
+  font-family: "Dancing Script", cursive;
 }
 
 p::before {
   content: "<p>";
-  
 }
 
 h1:before {
   content: "<h1>";
+}
+
+.nav {
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#theme-btn {
+  grid-column-start: 11;
+  grid-column-end: 12;
+}
+
+#flag-btn {
+  grid-column-start: 12;
+  grid-column-end: 13;
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
 }

@@ -2,14 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import "./index.css";
 import Navigation from "./components/navigation";
-import Bio from "./components/bio";
-import Skills from "./components/skills";
+import Home from "./components/pages/home";
+import Portfolio from './components/pages/portfolio';
+import Contact from './components/pages/contact';
 import { Container } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const strings = require("./strings.json");
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [language, setLanguage] = useState("en");
 
   const themeHandler = () => {
@@ -32,12 +34,6 @@ function App() {
     return theme === "dark" ? `${prefix}-dark` : `${prefix}-light`;
   };
 
-  // router?
-  // / => home
-  // /portfolio => portfolio
-  // /hobbies => pix of hobbies
-  // /contact => contact info
-
   return (
     <>
       <Navigation
@@ -47,11 +43,25 @@ function App() {
         theme={theme}
         language={language}
       />
-      <Container fluid>
-        <h1>{strings[language].greeting}</h1>
-        <Bio language={language} theme={theme} classNameHandler={classNameHandler} />
-        <Skills theme={theme} classNameHandler={classNameHandler}/>
-      </Container>
+      <Router>
+        <Container fluid className="grid">
+          <Switch>
+            <Route exact path="/">
+              <Home
+                language={language}
+                theme={theme}
+                classNameHandler={classNameHandler}
+              />
+            </Route>
+            <Route path="/portfolio">
+              <Portfolio />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+        </Container>
+      </Router>
     </>
   );
 }
