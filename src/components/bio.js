@@ -61,12 +61,12 @@ const Biografia = () => {
 
 const Bio = ({ language, theme, classNameHandler }) => {
   return (
-    <Row className={classNameHandler(theme, "bio")}>
-      <Col>
-        <h1>{strings[language].greeting}</h1>
-        {language === "en" ? <Biography /> : <Biografia />}
-      </Col>
-    </Row>
+      <Row className={classNameHandler(theme, "bio")}>
+        <Col>
+          <h1>{strings[language].greeting}</h1>
+          {language === "en" ? <Biography /> : <Biografia />}
+        </Col>
+      </Row>
   );
 };
 

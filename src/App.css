@@ -1,7 +1,7 @@
 :root {
-  --princetonOrange: #FA8334;
-  --laserLemon: #FFFD77;
-  --yellowCrayola: #FFE882;
+  --princetonOrange: #fa8334;
+  --laserLemon: #fffd77;
+  --yellowCrayola: #ffe882;
   --metallicSeaweed: #388697;
   --darkPurple: #271033;
 }
@@ -10,10 +10,39 @@
   font-family: "Brygada 1918", serif;
 }
 
-.grid {
+.home-grid {
   display: grid;
   grid-template-columns: 4fr 1fr;
   height: 90vh;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "title"
+    "deck";
+}
+
+#portfolio-title {
+  grid-area: title;
+}
+
+#deck {
+  grid-area: deck;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio-light {
+  background-color: var(--yellowCrayola);
+  /* color: var(--darkPurple); */
+}
+
+.portfolio-dark {
+  background-color: var(--metallicSeaweed);
+
 }
 
 .nav-light {
@@ -26,12 +55,11 @@
 }
 
 .nav-dark {
-  background-color:var(--darkPurple);
+  background-color: var(--darkPurple);
 }
 
 .nav-dark a {
   color: var(--princetonOrange);
-
 }
 
 button {
@@ -40,17 +68,19 @@ button {
   margin-top: 2vh;
 }
 
-div[class^='bio-'], div[class^='skills-'] {
+div[class^="bio-"],
+div[class^="skills-"],
+div[class^="portfolio-"] {
   padding: 25px;
 }
 
 .bio-light {
-  background-color: var(--yellowCrayola);;
+  background-color: var(--yellowCrayola);
   color: black;
 }
 
 .bio-dark {
-  background-color: var(--metallicSeaweed);;
+  background-color: var(--metallicSeaweed);
   color: white;
 }
 
@@ -70,7 +100,7 @@ div[class^='bio-'], div[class^='skills-'] {
 
 h1::before,
 p::before {
-  color: var(--princetonOrange);;
+  color: var(--princetonOrange);
   font-size: x-small;
   font-family: "Dancing Script", cursive;
 }

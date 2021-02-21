@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Nav, Button } from "react-bootstrap";
-import logo from '../images/logo.jpg';
+import { Link } from "react-router-dom";
+import logo from "../images/logo.jpg";
 const strings = require("../strings.json");
 
 const Navigation = ({
@@ -15,7 +16,7 @@ const Navigation = ({
   );
   const [currentFlag, setCurrentFlag] = useState(strings[language].flag);
 
-  const hoverInThemeHandler = (e) => {
+  const hoverInThemeHandler = () => {
     if (theme.toLowerCase() === "light") {
       setDisplayedTheme(strings[language]["dark"].themeName);
     } else {
@@ -23,7 +24,7 @@ const Navigation = ({
     }
   };
 
-  const hoverInFlagHandler = (e) => {
+  const hoverInFlagHandler = () => {
     if (currentFlag === "🇺🇸") {
       setCurrentFlag(strings["es"].flag);
     } else {
@@ -31,7 +32,7 @@ const Navigation = ({
     }
   };
 
-  const hoverOutHandler = (e) => {
+  const hoverOutHandler = () => {
     setCurrentFlag(strings[language].flag);
     setDisplayedTheme(strings[language][theme].themeName);
   };
@@ -39,38 +40,34 @@ const Navigation = ({
   return (
     <Nav className={classNameHandler(theme, "nav")} variant="pills">
       <Nav.Item>
-        <Nav.Link href="/" eventKey="/">
-          <img id='logo' src={logo} />
-        </Nav.Link>
+        <Link to="/">
+          <img id="logo" src={logo} />
+        </Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/portfolio" eventKey="/portfolio">
-          /portfolio
-        </Nav.Link>
+        <Link to="/portfolio">/portfolio</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/contact" eventKey="/contact">
-          /contact
-        </Nav.Link>
+        <Link to="/contact">/contact</Link>
       </Nav.Item>
-        <Button
-        id='theme-btn'
-          onClick={(e) => themeHandler()}
-          variant={theme === "dark" ? "outline-light" : "outline-dark"}
-          onMouseEnter={(e) => hoverInThemeHandler(e)}
-          onMouseLeave={(e) => hoverOutHandler(e)}
-        >
-          {displayedTheme}
-        </Button>
-        <Button
-          id="flag-btn"
-          onClick={(e) => languageHandler()}
-          variant={theme === "dark" ? "outline-light" : "outline-dark"}
-          onMouseEnter={(e) => hoverInFlagHandler(e)}
-          onMouseLeave={(e) => hoverOutHandler(e)}
-        >
-          {currentFlag}
-        </Button>
+      <Button
+        id="theme-btn"
+        onClick={() => themeHandler()}
+        variant={theme === "dark" ? "outline-light" : "outline-dark"}
+        onMouseEnter={() => hoverInThemeHandler()}
+        onMouseLeave={() => hoverOutHandler()}
+      >
+        {displayedTheme}
+      </Button>
+      <Button
+        id="flag-btn"
+        onClick={() => languageHandler()}
+        variant={theme === "dark" ? "outline-light" : "outline-dark"}
+        onMouseEnter={() => hoverInFlagHandler()}
+        onMouseLeave={() => hoverOutHandler()}
+      >
+        {currentFlag}
+      </Button>
     </Nav>
   );
 };

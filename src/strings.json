@@ -7,6 +7,12 @@
         },
         "dark": {
             "themeName": "Dark"
+        },
+        "home": "Welcome to BrandonGatlin.com",
+        "portfolio": "Portfolio",
+        "bingo": {
+            "title": "Bingo",
+            "description": "A Bilingual Listening Bingo Game"
         }
     },
     "es": {
@@ -17,6 +23,15 @@
         },
         "dark": {
             "themeName": "Oscuro"
+        },
+        "home": "¡Bienvenidos a Mi Sitio Web!",
+        "portfolio": "Obras",
+        "bingo": {
+            "title": "El Bingo",
+            "description": "Un Juego Bilingüe de Bingo de Escuchar"
         }
+    },
+    "technology": {
+        "bingo": ["Javascript", "RESTful API"]
     }
 }

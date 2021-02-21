@@ -3,8 +3,8 @@ import "./App.css";
 import "./index.css";
 import Navigation from "./components/navigation";
 import Home from "./components/pages/home";
-import Portfolio from './components/pages/portfolio';
-import Contact from './components/pages/contact';
+import Portfolio from "./components/pages/portfolio";
+import Contact from "./components/pages/contact";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -35,34 +35,36 @@ function App() {
   };
 
   return (
-    <>
-      <Navigation
-        themeHandler={themeHandler}
-        languageHandler={languageHandler}
-        classNameHandler={classNameHandler}
-        theme={theme}
-        language={language}
-      />
-      <Router>
-        <Container fluid className="grid">
-          <Switch>
-            <Route exact path="/">
-              <Home
-                language={language}
-                theme={theme}
-                classNameHandler={classNameHandler}
-              />
-            </Route>
-            <Route path="/portfolio">
-              <Portfolio />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-          </Switch>
-        </Container>
-      </Router>
-    </>
+    <Router>
+      <div>
+        <Navigation
+          themeHandler={themeHandler}
+          languageHandler={languageHandler}
+          classNameHandler={classNameHandler}
+          theme={theme}
+          language={language}
+        />
+        <Switch>
+          <Route exact path="/">
+            <Home
+              language={language}
+              theme={theme}
+              classNameHandler={classNameHandler}
+            />
+          </Route>
+          <Route path="/portfolio">
+            <Portfolio
+              language={language}
+              theme={theme}
+              classNameHandler={classNameHandler}
+            />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
