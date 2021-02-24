@@ -47,9 +47,6 @@ const Navigation = ({
       <Nav.Item>
         <Link to="/portfolio">/portfolio</Link>
       </Nav.Item>
-      <Nav.Item>
-        <Link to="/contact">/contact</Link>
-      </Nav.Item>
       <Button
         id="theme-btn"
         onClick={() => themeHandler()}

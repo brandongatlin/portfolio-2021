@@ -2,10 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import "./index.css";
 import Navigation from "./components/navigation";
+import Footer from "./components/footer";
 import Home from "./components/pages/home";
 import Portfolio from "./components/pages/portfolio";
-import Contact from "./components/pages/contact";
-import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const strings = require("./strings.json");
@@ -59,10 +58,12 @@ function App() {
               classNameHandler={classNameHandler}
             />
           </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
         </Switch>
+        <Footer
+          language={language}
+          theme={theme}
+          classNameHandler={classNameHandler}
+        />
       </div>
     </Router>
   );

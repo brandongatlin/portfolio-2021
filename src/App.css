@@ -13,7 +13,7 @@
 .home-grid {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  height: 90vh;
+  height: 85vh;
 }
 
 .portfolio-grid {
@@ -137,3 +137,32 @@ h1:before {
 .nav-link {
   font-size: 1.2rem;
 }
+
+footer {
+  height: 5vh;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.footer-img {
+  height: 30px;
+  width: 30px;
+}
+
+img.gh {
+  grid-column: 2;
+}
+
+footer > p {
+  grid-column: 5;
+}
+
+img.li {
+  grid-column: 8;
+}
+
+
+
+
+
+
