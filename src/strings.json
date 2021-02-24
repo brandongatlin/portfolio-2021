@@ -9,6 +9,7 @@
             "themeName": "Dark"
         },
         "home": "Welcome to BrandonGatlin.com",
+        "copyright": "Copyright © [START] – [CURRENT]. All rights reserved.",
         "portfolio": "Portfolio",
         "bingo": {
             "title": "Bingo",
@@ -25,6 +26,7 @@
             "themeName": "Oscuro"
         },
         "home": "¡Bienvenidos a Mi Sitio Web!",
+        "copyright": "Copyright © [START] – [CURRENT]. Todos Derechos Reservados.",
         "portfolio": "Obras",
         "bingo": {
             "title": "El Bingo",

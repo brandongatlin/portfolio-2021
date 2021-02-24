@@ -18,6 +18,7 @@
 
 .portfolio-grid {
   display: grid;
+  height: 85vh;
   grid-auto-rows: auto;
   grid-template-areas:
     "title"
@@ -42,7 +43,6 @@
 
 .portfolio-dark {
   background-color: var(--metallicSeaweed);
-
 }
 
 .nav-light {
@@ -132,16 +132,30 @@ h1:before {
 #logo {
   width: 40px;
   height: 40px;
+  margin-left: 2vw;
 }
 
-.nav-link {
+.nav-item > a {
+  display: inline-block;
   font-size: 1.2rem;
+  margin-top: 2vh;
 }
 
 footer {
   height: 5vh;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  padding: 5px;
+}
+
+.footer-light {
+  background-color: var(--princetonOrange);
+  color: var(--darkPurple);
+}
+
+.footer-dark {
+  background-color: var(--darkPurple);
+  color: var(--princetonOrange)
 }
 
 .footer-img {
@@ -150,15 +164,15 @@ footer {
 }
 
 img.gh {
-  grid-column: 2;
+  grid-column: 1;
 }
 
 footer > p {
-  grid-column: 5;
+  grid-column: 5 / 9;
 }
 
 img.li {
-  grid-column: 8;
+  grid-column: 13;
 }
 
 
