@@ -163,7 +163,7 @@ footer {
   width: 30px;
 }
 
-img.gh {
+a.gh {
   grid-column: 1;
 }
 
@@ -171,7 +171,7 @@ footer > p {
   grid-column: 5 / 9;
 }
 
-img.li {
+a.li {
   grid-column: 13;
 }
 
