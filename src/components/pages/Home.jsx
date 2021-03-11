@@ -1,14 +1,15 @@
-import React, {useEffect} from "react";
-import { Container } from "react-bootstrap";
-import Bio from "../bio";
-import Skills from "../skills";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Container } from 'react-bootstrap';
+import Bio from '../Bio';
+import Skills from '../Skills';
 
 const strings = require('../../strings.json');
 
 const Home = ({ language, theme, classNameHandler }) => {
-  useEffect(()=> {
+  useEffect(() => {
     document.title = strings[language].home;
-  }, [language])
+  }, [language]);
   return (
     <Container fluid className="home-grid">
       <Bio
@@ -19,6 +20,12 @@ const Home = ({ language, theme, classNameHandler }) => {
       <Skills theme={theme} classNameHandler={classNameHandler} />
     </Container>
   );
+};
+
+Home.propTypes = {
+  language: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  classNameHandler: PropTypes.func.isRequired,
 };
 
 export default Home;

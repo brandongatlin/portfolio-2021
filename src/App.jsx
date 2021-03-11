@@ -1,37 +1,34 @@
-import { useState } from "react";
-import "./App.css";
-import "./index.css";
-import Navigation from "./components/navigation";
-import Footer from "./components/footer";
-import Home from "./components/pages/home";
-import Portfolio from "./components/pages/portfolio";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-const strings = require("./strings.json");
+import React, { useState } from 'react';
+import './App.css';
+import './index.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import Home from './components/pages/Home';
+import Portfolio from './components/pages/Portfolio';
+import Hobbies from './components/pages/Hobbies';
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  const [language, setLanguage] = useState("en");
+  const [theme, setTheme] = useState('dark');
+  const [language, setLanguage] = useState('en');
 
   const themeHandler = () => {
-    if (theme === "dark") {
-      setTheme("light");
+    if (theme === 'dark') {
+      setTheme('light');
     } else {
-      setTheme("dark");
+      setTheme('dark');
     }
   };
 
   const languageHandler = () => {
-    if (language === "en") {
-      setLanguage("es");
+    if (language === 'en') {
+      setLanguage('es');
     } else {
-      setLanguage("en");
+      setLanguage('en');
     }
   };
 
-  const classNameHandler = (theme, prefix) => {
-    return theme === "dark" ? `${prefix}-dark` : `${prefix}-light`;
-  };
+  const classNameHandler = (colorTheme, prefix) => (colorTheme === 'dark' ? `${prefix}-dark` : `${prefix}-light`);
 
   return (
     <Router>
@@ -53,6 +50,13 @@ function App() {
           </Route>
           <Route path="/portfolio">
             <Portfolio
+              language={language}
+              theme={theme}
+              classNameHandler={classNameHandler}
+            />
+          </Route>
+          <Route path="/hobbies">
+            <Hobbies
               language={language}
               theme={theme}
               classNameHandler={classNameHandler}

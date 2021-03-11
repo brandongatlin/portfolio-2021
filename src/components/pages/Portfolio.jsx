@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
-import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
-import bingo from "../../images/bingo.png";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import {
+  Container, Row, Col, Card, CardDeck,
+} from 'react-bootstrap';
+import bingo from '../../images/bingo.png';
 
-const strings = require("../../strings.json");
+const strings = require('../../strings.json');
 
 const Portfolio = ({ language, theme, classNameHandler }) => {
   useEffect(() => {
@@ -11,7 +14,7 @@ const Portfolio = ({ language, theme, classNameHandler }) => {
   return (
     <Container
       fluid
-      className={classNameHandler(theme, "portfolio") + " portfolio-grid"}
+      className={`${classNameHandler(theme, 'portfolio')} portfolio-grid`}
     >
       <Row>
         <Col>
@@ -22,7 +25,7 @@ const Portfolio = ({ language, theme, classNameHandler }) => {
         <Col>
           <CardDeck id="deck">
             <Card>
-              <a href="https://brandongatlin.github.io/forvo-bingo" target='_blank'>
+              <a href="https://brandongatlin.github.io/forvo-bingo" target="_blank" rel="noreferrer">
                 <Card.Img variant="top" src={bingo} />
               </a>
               <Card.Body>
@@ -40,6 +43,12 @@ const Portfolio = ({ language, theme, classNameHandler }) => {
       </Row>
     </Container>
   );
+};
+
+Portfolio.propTypes = {
+  language: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  classNameHandler: PropTypes.func.isRequired,
 };
 
 export default Portfolio;

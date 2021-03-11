@@ -7,7 +7,7 @@
 }
 
 * {
-  font-family: "Brygada 1918", serif;
+  font-family: 'Brygada 1918', serif;
 }
 
 .home-grid {
@@ -21,8 +21,8 @@
   height: 85vh;
   grid-auto-rows: auto;
   grid-template-areas:
-    "title"
-    "deck";
+    'title'
+    'deck';
 }
 
 #portfolio-title {
@@ -68,9 +68,10 @@ button {
   margin-top: 2vh;
 }
 
-div[class^="bio-"],
-div[class^="skills-"],
-div[class^="portfolio-"] {
+div[class^='bio-'],
+div[class^='skills-'],
+div[class^='portfolio-'],
+div[class^='hobbies-'] {
   padding: 25px;
 }
 
@@ -102,15 +103,15 @@ h1::before,
 p::before {
   color: var(--princetonOrange);
   font-size: x-small;
-  font-family: "Dancing Script", cursive;
+  font-family: 'Dancing Script', cursive;
 }
 
 p::before {
-  content: "<p>";
+  content: '<p>';
 }
 
 h1:before {
-  content: "<h1>";
+  content: '<h1>';
 }
 
 .nav {
@@ -155,7 +156,7 @@ footer {
 
 .footer-dark {
   background-color: var(--darkPurple);
-  color: var(--princetonOrange)
+  color: var(--princetonOrange);
 }
 
 .footer-img {
@@ -175,8 +176,24 @@ a.li {
   grid-column: 13;
 }
 
+.hobbies-grid {
+  height: 85vh;
+}
 
+.hobby-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
 
+.hobby-img {
+  height: 30%;
+}
 
+.hobbies-light {
+  background-color: var(--yellowCrayola);
+  /* color: var(--darkPurple); */
+}
 
-
+.hobbies-dark {
+  background-color: var(--metallicSeaweed);
+}

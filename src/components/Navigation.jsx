@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { Nav, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import logo from "../images/logo.jpg";
-const strings = require("../strings.json");
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import logo from '../images/logo.jpg';
+
+const strings = require('../strings.json');
 
 const Navigation = ({
   themeHandler,
@@ -12,23 +14,23 @@ const Navigation = ({
   language,
 }) => {
   const [displayedTheme, setDisplayedTheme] = useState(
-    strings[language][theme].themeName
+    strings[language][theme].themeName,
   );
   const [currentFlag, setCurrentFlag] = useState(strings[language].flag);
 
   const hoverInThemeHandler = () => {
-    if (theme.toLowerCase() === "light") {
-      setDisplayedTheme(strings[language]["dark"].themeName);
+    if (theme.toLowerCase() === 'light') {
+      setDisplayedTheme(strings[language].dark.themeName);
     } else {
-      setDisplayedTheme(strings[language]["light"].themeName);
+      setDisplayedTheme(strings[language].light.themeName);
     }
   };
 
   const hoverInFlagHandler = () => {
-    if (currentFlag === "🇺🇸") {
-      setCurrentFlag(strings["es"].flag);
+    if (currentFlag === '🇺🇸') {
+      setCurrentFlag(strings.es.flag);
     } else {
-      setCurrentFlag(strings["en"].flag);
+      setCurrentFlag(strings.en.flag);
     }
   };
 
@@ -38,19 +40,22 @@ const Navigation = ({
   };
 
   return (
-    <Nav className={classNameHandler(theme, "nav")} variant="pills">
+    <Nav className={classNameHandler(theme, 'nav')} variant="pills">
       <Nav.Item>
         <Link to="/">
-          <img id="logo" src={logo} />
+          <img id="logo" src={logo} alt="logo" />
         </Link>
       </Nav.Item>
       <Nav.Item>
         <Link to="/portfolio">/portfolio</Link>
       </Nav.Item>
+      <Nav.Item>
+        <Link to="/hobbies">/hobbies</Link>
+      </Nav.Item>
       <Button
         id="theme-btn"
         onClick={() => themeHandler()}
-        variant={theme === "dark" ? "outline-light" : "outline-dark"}
+        variant={theme === 'dark' ? 'outline-light' : 'outline-dark'}
         onMouseEnter={() => hoverInThemeHandler()}
         onMouseLeave={() => hoverOutHandler()}
       >
@@ -59,7 +64,7 @@ const Navigation = ({
       <Button
         id="flag-btn"
         onClick={() => languageHandler()}
-        variant={theme === "dark" ? "outline-light" : "outline-dark"}
+        variant={theme === 'dark' ? 'outline-light' : 'outline-dark'}
         onMouseEnter={() => hoverInFlagHandler()}
         onMouseLeave={() => hoverOutHandler()}
       >
@@ -69,6 +74,12 @@ const Navigation = ({
   );
 };
 
-// flag and lang should change on hover to preview what would change
+Navigation.propTypes = {
+  themeHandler: PropTypes.func.isRequired,
+  languageHandler: PropTypes.func.isRequired,
+  language: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  classNameHandler: PropTypes.func.isRequired,
+};
 
 export default Navigation;

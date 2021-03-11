@@ -11,6 +11,12 @@
         "home": "Welcome to BrandonGatlin.com",
         "copyright": "Copyright © [START] – [CURRENT]. All rights reserved.",
         "portfolio": "Portfolio",
+        "hobbies": {
+            "title": "Hobbies",
+            "hobbies": {
+                "glass": "Stained Glass"
+            }
+        },
         "bingo": {
             "title": "Bingo",
             "description": "A Bilingual Listening Bingo Game"
@@ -28,12 +34,22 @@
         "home": "¡Bienvenidos a Mi Sitio Web!",
         "copyright": "Copyright © [START] – [CURRENT]. Todos Derechos Reservados.",
         "portfolio": "Obras",
+        "title": "Pasatiempos",
+        "hobbies": {
+            "title": "Pasatiempos",
+            "hobbies": {
+                "glass": "Vitral"
+            }
+        },
         "bingo": {
             "title": "El Bingo",
             "description": "Un Juego Bilingüe de Bingo de Escuchar"
         }
     },
     "technology": {
-        "bingo": ["Javascript", "RESTful API"]
+        "bingo": [
+            "Javascript",
+            "RESTful API"
+        ]
     }
 }
