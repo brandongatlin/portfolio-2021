@@ -182,11 +182,11 @@ a.li {
 
 .hobby-card {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 
 .hobby-img {
-  height: 30%;
+  height: 30vh;
 }
 
 .hobbies-light {
